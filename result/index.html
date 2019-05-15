@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-assets>
+        <a-asset-item id="tree" src='https://raw.githubusercontent.com/bazzigom/aframeTest1/master/Models/gltf/haruko_gltf.gltf'></a-asset-item>
+      </a-assets>
+
+
+      <a-gltf-model rotation= "0 0 0" scale="0.1 0.1 0.1" src="#tree"></a-gltf-model>
+
+
+
+
+      <a-box id= "box1" width="1" height="1" depth="1" position="-1 0.5 -3" rotation="0 0 0" color="#4CC3D9" src="#texture1"
+       animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+       animation__2="property: position; to: -5 0.5 -3; dur: 1500; easing: linear; loop: true; dir:alternate"
+       animation__3="property: scale; to: 2 2 2; dur: 1500; loop: true; dir:alternate"
+       animation__4="property: material.color; from: #4CC3D9; to: #FF3333; dur:1500; loop:true; dir:alternate; pauseEvents:mouseenter";
+       animation__mouseenter="property: components.material.material.color; type: color; to: blue; startEvents: mouseenter; pauseEvents:mouseleave; dur: 500";
+       animation__mouseleave="property: components.material.material.color; type: color; to: #4CC3D9; startEvents: mouseleave; pauseEvents:mouseenter; dur: 500";
+       animation__5="property: material.color; from: #4CC3D9; to: #FF3333; dur:1500; loop:true; dir:alternate; startEvents:mouseleave; pauseEvents:mouseenter" ;>
+      </a-box>
+
+      <a-camera position="0 7 5">
+        <a-cursor color="FF0000"> </a-curosr>
+      </a-camera>
+
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+
+
+      <a-sky src="https://raw.githubusercontent.com/bazzigom/aframeTest_VR/master/img/skybox2_1.jpg"></a-sky>
+
+
+    </a-scene>
+
+  </body>
+</html>
